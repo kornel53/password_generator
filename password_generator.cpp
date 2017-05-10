@@ -30,7 +30,7 @@ int main()
                     "[2] Change password length\n"
                     "[C] Copy to clipboard\n"
                     "[ESC] Exit program\n\n"
-                    "Generated password: " << randomize(how_many);
+                    "Generated password:  " << randomize(how_many);
 		do
 		{
 
@@ -39,7 +39,7 @@ int main()
 			switch (next)
 			{
 			case '1':
-				std::cout << "\rGenerated password: " << randomize(how_many);
+				std::cout << "\rGenerated password:  " << randomize(how_many);
 				break;
 			case '2':
 			    system("cls");
@@ -50,7 +50,6 @@ int main()
 			case 27:
 				exit(0);
 			default:
-				std::cout << " No matching key shortcut!";
 				break;
 			}
 		} while (next != '2');
@@ -80,4 +79,5 @@ void toClipboard(HWND hwnd, const std::string &s) {
 	SetClipboardData(CF_TEXT, hg);
 	CloseClipboard();
 	GlobalFree(hg);
+	std::cout << "\rCopied successfully!";
 }
